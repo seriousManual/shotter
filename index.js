@@ -17,7 +17,7 @@ sh.readGroup((err, groups) => {
 
     sc.on('progress', () => bar.tick());
 
-
-
-    sc.createSessionForGroups();
+    sc.createSessionForGroups((error) => {
+        if (error) console.log(error.message);
+    });
 });
