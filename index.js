@@ -1,23 +1,18 @@
-var ProgressBar = require('progress');
-
 var SessionHandler = require('./lib/SessionHandler');
 var SessionCreator = require('./lib/SessionCreator');
 
-var sh = new SessionHandler('./groups');
+function shotter(dir, callback) {
+    var sh = new SessionHandler(dir);
+    var sc = new SessionCreator();
 
-sh.readGroup((err, groups) => {
-    var sc = new SessionCreator(groups);
+    sh.readGroup((err, groups) => {
+        sc.setGroups(groups);
 
-    var bar = new ProgressBar('  calculating [:bar] :percent', {
-        complete: '=',
-        incomplete: ' ',
-        width: 50,
-        total: sc.calcStats()
+        sc.emit('initialize');
+        sc.createSessionForGroups(callback);
     });
 
-    sc.on('progress', () => bar.tick());
+    return sc;
+}
 
-    sc.createSessionForGroups((error) => {
-        if (error) console.log(error.message);
-    });
-});
+module.exports = shotter;
