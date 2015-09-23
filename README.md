@@ -9,6 +9,37 @@ This will result in an image the looks similar to this one (click to enlarge):
   click to enlarge
 </p>
 
+## installation
+
+````
+npm i shotter -g
+````
+Will install the shotter module in the global namespace
+
+## usage 
+
+Simply run `shotter` in your working directory (see [specification](#specification)).
+
+The module can also be used as a direct dependency.
+The returned instance is a event emitter that will emit a `progress` event with the percentage as a value.
+Also an `initialize` event will be fired.
+
+(The `initialize` and the `progress` event could be used for the implementation of a progress bar) 
+
+````javascript
+var shotter = require('shotter');
+
+var creator = shotter(process.cwd(), function(error) {
+    if (error) console.log(error)
+
+    console.log('I\'m done!')
+})
+
+creator
+    .on('initialize', () => console.log('initialize'))
+    .on('progress', (percentage) => console.log(percentage))
+````
+
 ## specification
 
 Shotter works in a working space and treats every directory in this working space as a distinct project. Each project has its own set of URLs that are specified via a `.spec.json` file.

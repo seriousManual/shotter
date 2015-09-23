@@ -1,18 +1,22 @@
-var SessionHandler = require('./lib/SessionHandler');
-var SessionCreator = require('./lib/SessionCreator');
+var SessionHandler = require('./lib/SessionHandler')
+var SessionCreator = require('./lib/SessionCreator')
 
 function shotter(dir, callback) {
-    var sh = new SessionHandler(dir);
-    var sc = new SessionCreator();
+    callback = callback || function() {}
 
-    sh.readGroup((err, groups) => {
-        sc.setGroups(groups);
+    var sh = new SessionHandler(dir)
+    var sc = new SessionCreator()
 
-        sc.emit('initialize');
-        sc.createSessionForGroups(callback);
-    });
+    sh.readGroup((error, groups) => {
+        if (error) return callback(error)
 
-    return sc;
+        sc.setGroups(groups)
+
+        sc.emit('initialize')
+        sc.createSessionForGroups(callback)
+    })
+
+    return sc
 }
 
-module.exports = shotter;
+module.exports = shotter

@@ -6,6 +6,7 @@
     "screenshots", "diff"
   ],
   "main": "index.js",
+  "bin": "./bin/shotter.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha tests/unit"
   },
