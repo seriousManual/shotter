@@ -3,6 +3,12 @@ module.exports = {
         return {
             isNewSession: () => isNew,
             getIdentifier: () => ident
-        };
+        }
+    },
+
+    createMockTestObject: (fileName) => {
+        return {
+            getFileName: () => fileName
+        }
     }
-};
+}
