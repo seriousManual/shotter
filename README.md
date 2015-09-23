@@ -18,7 +18,15 @@ Will install the shotter module in the global namespace
 
 ## usage 
 
+### global installation 
+
 Simply run `shotter` in your working directory (see [specification](#specification)).
+
+Parameters:
+
+--concurrency, -c specifies the number of parallel threads that are used to render screenshots/diffs/results, defaults to 1
+
+### local installation
 
 The module can also be used as a direct dependency.
 The returned instance is a event emitter that will emit a `progress` event with the percentage as a value.
@@ -29,7 +37,7 @@ Also an `initialize` event will be fired.
 ````javascript
 var shotter = require('shotter');
 
-var creator = shotter(process.cwd(), function(error) {
+var creator = shotter(process.cwd(), (error) => {
     if (error) console.log(error)
 
     console.log('I\'m done!')

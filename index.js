@@ -1,11 +1,12 @@
 var SessionHandler = require('./lib/SessionHandler')
 var SessionCreator = require('./lib/SessionCreator')
 
-function shotter(dir, callback) {
+function shotter(dir, options, callback) {
+    options = options || {}
     callback = callback || function() {}
 
     var sh = new SessionHandler(dir)
-    var sc = new SessionCreator()
+    var sc = new SessionCreator(null, options)
 
     sh.readGroup((error, groups) => {
         if (error) return callback(error)
