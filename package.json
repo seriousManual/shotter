@@ -1,13 +1,13 @@
 {
   "name": "shotter",
   "version": "1.0.0",
-  "description": "takes screenshots on several pages and compares them",
+  "description": "takes screenshots on several pages and visualizes the differences",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha tests"
   },
   "author": "Manuel Ernst <seriousstuff@gmx.de>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "async": "^1.4.2",
     "debug": "^2.2.0",
@@ -17,5 +17,11 @@
     "moment": "^2.10.6",
     "progress": "^1.1.8",
     "webshot": "^0.16.0"
+  },
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
+    "sandboxed-module": "^2.0.3",
+    "sinon": "^1.17.0"
   }
 }
