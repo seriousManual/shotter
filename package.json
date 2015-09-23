@@ -1,9 +1,10 @@
 {
   "name": "shotter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "takes screenshots on several pages and visualizes the differences",
   "keywords": [
-    "screenshots", "diff"
+    "screenshots",
+    "diff"
   ],
   "main": "index.js",
   "bin": "./bin/shotter.js",
