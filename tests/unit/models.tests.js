@@ -3,7 +3,7 @@ var expect = require('chai').expect;
 var Group = require('../../lib/models/Group')
 var Session = require('../../lib/models/Session')
 var TestObject = require('../../lib/models/TestObject')
-
+var Spec = require('../../lib/models/Spec')
 
 var mocks = require('../mocks');
 
@@ -130,5 +130,15 @@ describe('models', () => {
             it('should return isNew', () => expect(to.isNewTestObject()).to.be.false)
             it('should return the fileName', () => expect(to.getFileName()).to.equal('0ecebd6afb4b635c0aaa9405599955f2.png'))
         })
+    })
+
+    describe('Spec', () => {
+        var spec
+
+        before(() => {
+            spec = new Spec({urls: ['foo', 'bar']})
+        })
+
+        it('should return the urls', () => expect(spec.getUrls()).to.deep.equal(['foo', 'bar']))
     })
 })
