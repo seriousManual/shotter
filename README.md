@@ -1,1 +1,1 @@
-# shotter [![Build Status](https://travis-ci.org/seriousStuff/shotter.png)](https://travis-ci.org/seriousManual/shotter)
+# shotter [![Build Status](https://travis-ci.org/seriousManual/shotter.png)](https://travis-ci.org/seriousManual/shotter)
