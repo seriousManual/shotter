@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var ProgressBar = require('progress');
 
 var shotter = require('../index');
