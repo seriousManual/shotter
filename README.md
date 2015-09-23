@@ -25,8 +25,6 @@ Simply run `shotter` in your working directory (see [specification](#specificati
 #### Parameters:
 
 ````
-Standard Options:
-
     --concurrency, -c  specifies the number of parallel threads that are 
                        used to render screenshots/diffs/results
                        defaults to 1
