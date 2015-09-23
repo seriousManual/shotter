@@ -1,7 +1,9 @@
 var expect = require('chai').expect;
 
-var Group = require('../../lib/models/Group');
-var Session = require('../../lib/models/Session');
+var Group = require('../../lib/models/Group')
+var Session = require('../../lib/models/Session')
+var TestObject = require('../../lib/models/TestObject')
+
 
 var mocks = require('../mocks');
 
@@ -98,6 +100,35 @@ describe('models', () => {
             })
 
             it('should return the identifier', () => expect(session.getIdentifier()).to.match(/\d{14}/))
+        })
+    })
+
+    describe('TestObject', () => {
+        describe('default', () => {
+            var to
+
+            before(() => {
+                to = new TestObject('fooUrl', 'fooFileName', true)
+
+                to.setSession('fooSession')
+            })
+
+            it('should return the url', () => expect(to.getUrl()).to.equal('fooUrl'))
+            it('should return the filename', () => expect(to.getFileName()).to.equal('fooFileName'))
+            it('should return isNew', () => expect(to.isNewTestObject()).to.be.true)
+            it('should return the session', () => expect(to.getSession()).to.equal('fooSession'))
+        })
+
+        describe('unitialized', () => {
+            var to
+
+            before(() => {
+                to = new TestObject('fooUrl')
+            })
+
+            it('should return the url', () => expect(to.getUrl()).to.equal('fooUrl'))
+            it('should return isNew', () => expect(to.isNewTestObject()).to.be.false)
+            it('should return the fileName', () => expect(to.getFileName()).to.equal('0ecebd6afb4b635c0aaa9405599955f2.png'))
         })
     })
 })
