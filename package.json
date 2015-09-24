@@ -20,7 +20,6 @@
     "hirestime": "^1.0.3",
     "image-diff": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "moment": "^2.10.6",
     "pretty-ms": "^2.0.0",
     "progress": "^1.1.8",
     "webshot": "^0.16.0",
