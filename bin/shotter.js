@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var hr = require('hirestime')
-var ms = require('ms');
+var prettyMs = require('pretty-ms')
 var ProgressBar = require('progress')
 var argv = require('yargs').argv
 
@@ -18,7 +18,7 @@ function run() {
     var creator = shotter(process.cwd(), getOptions(argv), (error) => {
         if (error) console.log(error)
 
-        console.log('elapsed time: %s', ms(elapsed(), { long: true }))
+        console.log('elapsed time: %s', prettyMs(elapsed()))
     })
 
     var bar
