@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 var hr = require('hirestime')
+var ms = require('ms');
 var ProgressBar = require('progress')
 var argv = require('yargs').argv
 
@@ -17,13 +18,13 @@ function run() {
     var creator = shotter(process.cwd(), getOptions(argv), (error) => {
         if (error) console.log(error)
 
-        console.log('overall %d seconds', elapsed(hr.S))
+        console.log('elapsed time: %s', ms(elapsed(), { long: true }))
     })
 
     var bar
     creator
         .on('initialize', () => {
-            bar = new ProgressBar('  calculating [:bar] :percent', {
+            bar = new ProgressBar('[:bar] :percent', {
                 complete: '=',
                 incomplete: ' ',
                 width: 50,
