@@ -99,6 +99,7 @@ In the `.spec.json` file the URLs that should be used are specified:
 * [image-diff](https://github.com/uber/image-diff)
 * [gm](https://github.com/aheckmann/gm)
 
-## constraints
+## requirements
 
-Since some ES2015 features are used the minimal supported node version is 4.x 
+* [ImageMagick](http://www.imagemagick.org/script/index.php) needs to be installed
+* Since some ES2015 features are used the minimal supported node version is 4.x 
