@@ -4,7 +4,7 @@
   "description": "takes screenshots on several pages and visualizes the differences",
   "keywords": [
     "diff",
-    "screenshots"
+    "screenshots", "compare", "website"
   ],
   "main": "index.js",
   "bin": "./bin/shotter.js",
