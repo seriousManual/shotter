@@ -36,6 +36,7 @@ describe('models', () => {
                 latestNonNewSession = group.getLatestNonNewSession();
             })
 
+            it('should return two sessions', () => expect(group.getSessions().length).to.equal(2))
             it('should not return a session', () => expect(latestNonNewSession).to.be.null);
         })
 
@@ -90,14 +91,13 @@ describe('models', () => {
                 var equivalent = session.getEquivalentTestObject(mocks.createMockTestObject('fooName'));
                 expect(equivalent.getFileName()).to.equal('fooName')
             })
+            it('should return 3 testobjects', () => expect(session.getTestObjects().length).to.equal(3))
         })
 
         describe('default, no initialization', () => {
             var session
 
-            before(() => {
-                session = new Session()
-            })
+            before(() => session = new Session())
 
             it('should return the identifier', () => expect(session.getIdentifier()).to.match(/\d{14}/))
         })
