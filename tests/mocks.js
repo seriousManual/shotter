@@ -1,3 +1,5 @@
+var sinon = require('sinon')
+
 module.exports = {
     createMockGroup: (basePath, name) => {
         return {
@@ -17,5 +19,23 @@ module.exports = {
         return {
             getFileName: () => fileName
         }
+    },
+
+    createShotter: (error) => {
+        return sinon.spy((testObject, options, callback) => {
+            process.nextTick(() => callback(error))
+        })
+    },
+
+    createCompare: (error, pathToDiffImage) => {
+        return sinon.spy((testObject1, testObject2, callback) => {
+            process.nextTick(() => callback(error, pathToDiffImage))
+        })
+    },
+
+    createCombine: (error) => {
+        return sinon.spy((firstObject, testObject, pathToDiffImage, callback) => {
+            process.nextTick(() => callback(error))
+        })
     }
 }
