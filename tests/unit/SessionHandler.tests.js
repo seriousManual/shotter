@@ -1,10 +1,10 @@
 var path = require('path')
 
-var expect = require('chai').expect;
+var expect = require('chai').expect
 
 var SessionHandler = require('../../lib/SessionHandler')
 
-var basePath = path.join(__dirname, '../testData/ws1');
+var basePath = path.join(__dirname, '../testData/ws1')
 
 describe('SessionHandler', () => {
     var handler, groups, group, sessions, session, tos, to
