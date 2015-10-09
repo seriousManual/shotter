@@ -21,6 +21,12 @@ module.exports = {
         }
     },
 
+    createWebshot: (error) => {
+        return sinon.spy((url, pathToTestObject, options, callback) => {
+            process.nextTick(() => callback(error))
+        })
+    },
+
     createShotter: (error) => {
         return sinon.spy((testObject, options, callback) => {
             process.nextTick(() => callback(error))
