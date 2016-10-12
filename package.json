@@ -17,7 +17,7 @@
   "license": "MIT",
   "repository": "https://github.com/seriousManual/shotter",
   "dependencies": {
-    "async": "^1.5.1",
+    "async": "^2.1.1",
     "gm": "^1.19.0",
     "hirestime": "^2.0.1",
     "image-diff": "^1.2.0",
