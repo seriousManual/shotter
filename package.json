@@ -19,7 +19,7 @@
   "dependencies": {
     "async": "^2.1.1",
     "gm": "^1.19.0",
-    "hirestime": "^2.0.1",
+    "hirestime": "^3.1.0",
     "image-diff": "^1.2.0",
     "mkdirp": "^0.5.1",
     "pretty-ms": "^2.0.0",
