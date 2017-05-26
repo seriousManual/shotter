@@ -31,7 +31,7 @@
     "chai": "^3.3.0",
     "mocha": "^3.0.0",
     "sandboxed-module": "^2.0.3",
-    "sinon": "^1.17.0"
+    "sinon": "^2.3.2"
   },
   "engines": {
     "node": ">=4"
